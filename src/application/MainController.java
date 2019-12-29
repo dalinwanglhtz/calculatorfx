@@ -12,7 +12,6 @@ public class MainController {
 	private long number1=0;
 	private String operator="";
 	private boolean start=true;
-	private Model model = new Model();
 	
 	@FXML
 	public void processNumbers(ActionEvent event) {
@@ -37,7 +36,7 @@ public class MainController {
 			if(operator.isEmpty())
 				return;
 			long number2 = Long.parseLong(result.getText());
-			float output = model.Calculate(number1, number2, operator);
+			float output = Model.Calculate(number1, number2, operator);
 			result.setText(String.valueOf(output));
 			operator="";
 			start=true;
